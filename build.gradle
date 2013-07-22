@@ -1,0 +1,115 @@
+description = 'Spring XD integration tests'
+
+apply plugin: 'base'
+buildscript {
+        repositories {
+                maven { url "http://repo.springsource.org/plugins-snapshot" }
+        }
+}
+
+allprojects {
+        group = 'org.springframework.xd'
+
+        repositories {
+                maven { url 'http://repo.springsource.org/libs-milestone' }
+                maven { url 'http://repo.springsource.org/libs-snapshot' }
+                mavenLocal()
+        }
+}
+
+subprojects { subproject ->
+
+        apply plugin: 'java'
+        apply plugin: 'maven'
+        apply plugin: 'eclipse'
+        apply plugin: 'idea'
+
+        sourceCompatibility=1.6
+        targetCompatibility=1.6
+
+        ext {
+                slf4jVersion = '1.7.5'
+                log4jVersion = '1.2.17'
+                springShellVersion = '2.0.0.M2'
+                springVersion = '3.2.2.RELEASE'
+                springXDVersion = '1.0.0.BUILD-SNAPSHOT'
+        }
+
+        eclipse {
+                project {
+                        natures += 'org.springframework.ide.eclipse.core.springnature'
+                }
+        }
+ 
+        sourceSets {
+                test {
+                        resources {
+                                srcDirs = ['src/test/resources', 'src/test/java']
+                        }
+                }
+         } 
+}
+
+project("spring-xd-shell-tests") {
+        apply plugin:'application'
+        dependencies {
+                compile "org.springframework.shell:spring-shell:$springShellVersion"
+                compile "org.springframework.xd:spring-xd-rest-client:$springXDVersion"
+                compile "org.springframework.xd:spring-xd-shell:$springXDVersion"
+                compile "org.springframework.shell:spring-shell:$springShellVersion:tests"
+                compile "org.springframework.shell:shell-integration-test:$springShellVersion"
+                compile "org.springframework.xd:spring-xd-test:$springXDVersion"
+                runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+                        "org.slf4j:slf4j-log4j12:$slf4jVersion",
+                        "log4j:log4j:$log4jVersion"
+
+        } 
+        startScripts.setEnabled(false)
+        task scriptFiles {
+                def scripts = file("$rootDir/scripts/shell-test")
+                outputs.dir scripts
+        }
+        applicationDistribution.from(scriptFiles) {
+                into "bin"
+        }
+}
+
+task buildShellTests(dependsOn: [":spring-xd-shell-tests:build", ":spring-xd-shell-tests:installApp"]) {
+}
+
+task copyConfigs(type: Copy) {
+	from "$rootDir/config/shell-tests"
+        into "$buildDir/dist/spring-xd-shell-tests/config"
+}
+
+task copyInstall(type: Copy, dependsOn: ["buildShellTests", "copyConfigs"]) {
+        from "$rootDir/spring-xd-shell-tests/build/install/spring-xd-shell-tests"
+        into "$buildDir/dist/spring-xd-shell-tests"
+}
+
+task cleanDist(type: Delete) {
+        description = "cleans $rootDir/dist directory"
+        delete "$buildDir/dist"
+}
+
+task distIntegrationTests (type: Copy, dependsOn: ["cleanDist", "copyInstall"]) {
+        description = "Copy all the required installs"
+        from "$rootDir/scripts/README"
+        from "$rootDir/scripts/LICENSE"
+        into "$buildDir/dist/spring-xd-shell-tests"
+}
+
+configurations {
+        distIntegrationTests
+}
+
+task zipIntegrationTests (type: Zip, dependsOn: "dist"){
+        description = "Bundles Spring XD integration tests into dist/"
+        from file("$buildDir/dist/spring-xd-shell-tests").absolutePath
+        into "spring-xd-shell-tests"
+        destinationDir file("$buildDir/dist")
+}
+
+artifacts {
+        distIntegrationTests
+}

@@ -1,0 +1,17 @@
+{ "testcases" : 
+	[
+		{ "name" : "createStream",
+		  "command" : "stream create --definition \"http | file\" --name http2file",
+		  "result" : "Created new stream 'http2file'"
+		},
+		{ "name" : "listStream",
+		  "command" : "stream list",
+		  "result" : "http2file    http | file"
+		},
+		{ "name" : "destroyStream",
+		  "command" : "stream destroy --name http2file",
+		  "result" : "Destroyed stream 'http2file'"
+		}
+	]
+}
+

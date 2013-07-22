@@ -1,0 +1,106 @@
+// Spring Shell Unknown Version log opened at 2013-07-16 15:51:57
+stream list
+stream list
+date 5bc3426a-3ffa-4a1b-bb0f-998ad49c4a40
+// Spring Shell Unknown Version log opened at 2013-07-16 15:52:39
+stream list
+stream list
+date a12b3244-15cc-48ce-9fd9-31041b605c4a
+// Spring Shell Unknown Version log opened at 2013-07-17 10:58:24
+stream list
+stream list
+date b52174a8-9c8e-4b0f-88ad-533d6afb9209
+// Spring Shell Unknown Version log opened at 2013-07-17 15:47:37
+stream list
+stream list
+date 31eb90f0-03fd-4a34-bc74-f07d2d37bcbc
+// Spring Shell Unknown Version log opened at 2013-07-17 15:56:47
+stream list
+stream list
+date 628aa58a-fd63-41b3-9836-13febd536eb5
+// Spring Shell Unknown Version log opened at 2013-07-17 16:18:47
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-17 16:19:30
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-17 16:20:49
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-17 16:53:23
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-17 16:56:26
+// [failed] stream create --definition "http | file" --name http2file
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-17 17:00:09
+// [failed] stream create --definition "http | file" --name http2file1
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-17 17:00:51
+// [failed] stream create --definition "http | file" --name http2file2
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:20:00
+// [failed] stream create --definition "http | file" --name http2file
+// [failed] stream create --definition "http | file" --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 16:20:52
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:29:24
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:32:34
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:36:27
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:36:52
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:37:31
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:38:10
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:42:12
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 16:45:14
+// [failed] stream create --definition "http | file" --name http2file3
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 22:51:44
+// [failed] stream create --definition "http | file" --name http2file3
+// Spring Shell Unknown Version log opened at 2013-07-18 22:52:16
+// [failed] stream create --definition "http | file" --name http2file4
+// Spring Shell Unknown Version log opened at 2013-07-18 22:54:06
+stream create --definition "http | file" --name http2file4
+stream list
+// Spring Shell Unknown Version log opened at 2013-07-18 23:00:11
+// [failed] stream create --definition "http | file" --name http2file1
+// Spring Shell Unknown Version log opened at 2013-07-18 23:00:32
+// [failed] stream create --definition "http | file" --name http2file1
+// Spring Shell Unknown Version log opened at 2013-07-18 23:01:15
+// [failed] stream create --definition "http | file" --name http2file2
+// Spring Shell Unknown Version log opened at 2013-07-18 23:05:04
+stream create --definition "http | file" --name http2file2
+stream list
+// [failed] stream destroy --name http2fil
+// Spring Shell Unknown Version log opened at 2013-07-18 23:07:08
+stream create --definition "http | file" --name http2file
+stream list
+stream destroy --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 23:25:42
+stream create --definition "http | file" --name http2file
+stream list
+stream destroy --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 23:27:49
+stream create --definition "http | file" --name http2file
+stream list
+stream destroy --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 23:30:13
+stream create --definition "http | file" --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 23:34:17
+// [failed] stream create --definition "http | file" --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 23:43:01
+// [failed] stream create --definition "http | file" --name http2file
+stream list
+stream destroy --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-18 23:43:10
+stream create --definition "http | file" --name http2file
+stream list
+stream destroy --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-19 13:21:04
+stream create --definition "http | file" --name http2file
+// Spring Shell Unknown Version log opened at 2013-07-19 13:26:37
+stream create --definition "http | file" --name http2file
+stream list
+stream destroy --name http2file

@@ -1,2 +1,2 @@
-spring-xd-integration-tests
-===========================
+xd-performance-test
+===================

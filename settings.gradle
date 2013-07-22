@@ -1,0 +1,3 @@
+rootProject.name = 'spring-xd-integration-tests'
+
+include 'spring-xd-shell-tests'

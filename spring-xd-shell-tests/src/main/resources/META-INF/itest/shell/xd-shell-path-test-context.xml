@@ -1,0 +1,18 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list id="bootstrapContextPaths">
+    	<value>classpath:/META-INF/spring/shell/default-spring-shell-context.xml</value>
+        <value>classpath:/META-INF/spring/spring-shell-plugin.xml</value>
+        <value>classpath:/jline-shell-test-context.xml</value>
+    </util:list>
+    
+</beans>
