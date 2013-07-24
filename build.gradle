@@ -30,7 +30,7 @@ subprojects { subproject ->
         ext {
                 slf4jVersion = '1.7.5'
                 log4jVersion = '1.2.17'
-                springShellVersion = '2.0.0.M2'
+                springShellVersion = '1.1.0.BUILD-SNAPSHOT'
                 springVersion = '3.2.2.RELEASE'
                 springXDVersion = '1.0.0.BUILD-SNAPSHOT'
         }
@@ -56,8 +56,12 @@ project("spring-xd-shell-tests") {
                 compile "org.springframework.shell:spring-shell:$springShellVersion"
                 compile "org.springframework.xd:spring-xd-rest-client:$springXDVersion"
                 compile "org.springframework.xd:spring-xd-shell:$springXDVersion"
+                compile "org.springframework.xd:spring-xd-dirt:$springXDVersion"
+                compile "org.springframework.xd:spring-xd-http:$springXDVersion"
+                compile "org.springframework.xd:spring-xd-module:$springXDVersion"
+                compile "org.springframework.xd:spring-xd-tuple:$springXDVersion"
+                compile "org.springframework.xd:spring-integration-module:$springXDVersion"
                 compile "org.springframework.shell:spring-shell:$springShellVersion:tests"
-                compile "org.springframework.shell:shell-integration-test:$springShellVersion"
                 compile "org.springframework.xd:spring-xd-test:$springXDVersion"
                 runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion",
                         "org.slf4j:slf4j-log4j12:$slf4jVersion",
